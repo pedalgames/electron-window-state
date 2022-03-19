@@ -2,12 +2,14 @@
 
 const path = require('path');
 const electron = require('electron');
+const remote = require('@electron/remote'); // Fix for Electron 14+
+
 const jsonfile = require('jsonfile');
 const mkdirp = require('mkdirp');
 
 module.exports = function (options) {
-  const app = electron.app || electron.remote.app;
-  const screen = electron.screen || electron.remote.screen;
+  const app = electron.app || remote.app;
+  const screen = electron.screen || remote.screen;
   let state;
   let winRef;
   let stateChangeTimer;
