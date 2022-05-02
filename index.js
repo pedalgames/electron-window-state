@@ -179,6 +179,7 @@ module.exports = function (options) {
     get displayBounds() { return state.displayBounds; },
     get isMaximized() { return state.isMaximized; },
     get isFullScreen() { return state.isFullScreen; },
+    get win() { return winRef; },
     saveState,
     unmanage,
     manage,
